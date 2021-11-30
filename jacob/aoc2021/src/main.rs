@@ -1,3 +1,6 @@
+use std::io;
+
+//my modules
 mod day0;
 
 fn main(){
@@ -5,12 +8,37 @@ fn main(){
 
     //For ease of use, I'll build it as a 'match' check 
     //so only one variable needs to be changed.
+    //We'll get that from std input
+    println!("Please enter a day to run (0-24): ");
     
-    let day = 0;// change this for each day
-    match day{
-        0 => day0::main(),
-        _=> println!("Oops, that day doesn't exist!"),
+    //loop until a valid day is entered
+    loop{
+        //input string
+        let mut input_date = String::new();
+        io::stdin()
+            .read_line(&mut input_date)
+            .expect("Failed to read line");
+        
+        //parse the number, in case of error set to edge case
+        let day: u8 = match input_date.trim().parse(){
+            Ok(num) => num,
+            Err(_) => 255,
+        };
+
+        
+        //match block to execute code for specific day
+        match day{
+            0 => {  println!("Executing day {}",day);
+                    day0::main(); 
+                    break;},
+            _=> println!("Please enter a valid day to run (0-24): "),//edge case, keep looping
+        }
     }
+    
+    
+    
+    
+    
 
 
 
