@@ -9,6 +9,7 @@ case $yn in
       MESSAGE=$(date +"%Y-%m-%d %T")
       echo "No commit message supplied, using date time $MESSAGE"
     fi
+    git pull
     git add .
     git commit -m "$MESSAGE"
     git push
