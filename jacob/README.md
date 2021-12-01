@@ -6,3 +6,4 @@ I think it's most efficient to make one cargo project with one main file, and th
 Set up calling functions from other files. Using a "match" expression for flexibility.
 
 ## Day 1
+Calculating relative depths. First for adjacent measurements and then for a sliding window 3 measurements wide. Used Vectors and a for-loop, so I'm sure it could be more efficient.
