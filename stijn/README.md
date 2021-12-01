@@ -5,7 +5,7 @@
 **Prerequisites:**
 
 - Make sure you have node installed. You can follow [this guide](https://nodejs.org/en/download/).
-- Make sure your terminal is at the root of this directory.
+- Make sure your terminal is at the root of this repository.
 
 Run the challenges with node.  
 `node stijn/dist/main.js`
