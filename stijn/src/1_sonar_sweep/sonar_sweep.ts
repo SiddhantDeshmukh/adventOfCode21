@@ -33,7 +33,7 @@ export const sonarSweepPartTwo = (measurements: number[]): number => {
     const currentMeasurement =
       measurements[i] + measurements[i + 1] + measurements[i + 2];
 
-    if (previousMeasurement < currentMeasurement) {
+    if (currentMeasurement > previousMeasurement) {
       measurementIncreases += 1;
     }
   }
