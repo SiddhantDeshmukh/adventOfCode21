@@ -1,5 +1,4 @@
 import { sonarSweep } from "./sonar_sweep";
-import * as path from "path";
 
 describe("Day 1: Sonar Sweep", () => {
   it("handles arrays with one or zero indices", () => {
