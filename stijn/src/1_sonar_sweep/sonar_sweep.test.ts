@@ -1,5 +1,14 @@
-import { foo } from "./sonar_sweep";
+import { sonarSweep } from "./sonar_sweep";
+import * as path from "path";
 
-test("something", () => {
-  expect(foo()).toEqual(3);
+describe("Day 1: Sonar Sweep", () => {
+  it("handles arrays with one or zero indices", () => {
+    expect(sonarSweep([])).toEqual(0);
+    expect(sonarSweep([100])).toEqual(0);
+  });
+
+  it("returns the correct number of increases", () => {
+    const data = [10, 15, 20, 15, 20];
+    expect(sonarSweep(data)).toEqual(3);
+  });
 });
