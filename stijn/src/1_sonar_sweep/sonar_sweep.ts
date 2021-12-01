@@ -28,12 +28,12 @@ export const sonarSweepPartTwo = (measurements: number[]): number => {
   let measurementIncreases = 0;
 
   for (let i = 1; i < measurements.length - 2; i++) {
-    const previousMeasurement =
+    const previousWindow =
       measurements[i - 1] + measurements[i] + measurements[i + 1];
-    const currentMeasurement =
+    const currentWindow =
       measurements[i] + measurements[i + 1] + measurements[i + 2];
 
-    if (currentMeasurement > previousMeasurement) {
+    if (currentWindow > previousWindow) {
       measurementIncreases += 1;
     }
   }
