@@ -33,4 +33,4 @@ data = readdlm("james/rsc/1_sonar_data.txt", '\t', Int, '\n')
 print(count_increases(data))
 
 # Part 2: Sliding window increases
-print(count_window_increases(data, window_size = 3))
+print(count_window_increases(data))
