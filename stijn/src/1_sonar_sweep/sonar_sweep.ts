@@ -55,5 +55,4 @@ export default () => {
   );
   console.log("Answer: ", sonarSweepPartTwo(dataset.data));
   console.log("");
-  console.log("");
 };
