@@ -44,6 +44,9 @@ export const divePartOne = (course: Course): number => {
   return position.depth * position.horizontal;
 };
 
+/**
+ * Returns the product of the final depth and horizontal position.
+ */
 export const divePartTwo = (course: Course): number => {
   const position = { depth: 0, horizontal: 0, aim: 0 };
 
