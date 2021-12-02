@@ -26,3 +26,8 @@ end
 data = readdlm("james/rsc/1_sonar_data.txt", '\t', Int, '\n')
 println("Part 1: $(count_increases(data))")
 println("Part 2: $(count_window_increases(data))")
+
+# # For future reference, a gorgeous one-liner for this problem:
+# increases(data, width) = sum(b > a for (a, b) in zip(data, data[width+1:end]))
+# println("Part 1: $(increases(data, 1))")
+# println("Part 2: $(increases(data, 3))")
