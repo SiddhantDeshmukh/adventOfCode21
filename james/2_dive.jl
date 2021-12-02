@@ -30,7 +30,6 @@ function aimed_dive_displacement(movement)
     return horizontal * depth
 end 
 
-# Read in the data to an array
 data = readdlm("james/rsc/2_submarine_movement.txt")
 println("Part 1: $(dive_displacement(data))")
 println("Part 2: $(aimed_dive_displacement(data))")
