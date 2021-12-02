@@ -1,7 +1,6 @@
 # Sonar Sweep: Ack! You've lost your keys, let's use the submarine to find them
 using DelimitedFiles
 
-
 function count_increases(sensor_data)
     increases = 0
     for index = 2:length(sensor_data)
@@ -11,7 +10,6 @@ function count_increases(sensor_data)
     end
     return increases
 end
-
 
 function count_window_increases(sensor_data)
     increases = 0
@@ -25,12 +23,11 @@ function count_window_increases(sensor_data)
     return increases
 end
 
-
-# Read in the data to an array
 data = readdlm("james/rsc/1_sonar_data.txt", '\t', Int, '\n')
+println("Part 1: $(count_increases(data))")
+println("Part 2: $(count_window_increases(data))")
 
-# Part 1: Count increases
-print(count_increases(data))
-
-# Part 2: Sliding window increases
-print(count_window_increases(data))
+# # For future reference, a gorgeous one-liner for this problem:
+# increases(data, width) = sum(b > a for (a, b) in zip(data, data[width+1:end]))
+# println("Part 1: $(increases(data, 1))")
+# println("Part 2: $(increases(data, 3))")
