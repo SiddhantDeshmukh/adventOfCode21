@@ -30,7 +30,7 @@ end
 data = readdlm("james/rsc/1_sonar_data.txt", '\t', Int, '\n')
 
 # Part 1: Count increases
-print(count_increases(data))
+println(count_increases(data))
 
 # Part 2: Sliding window increases
-print(count_window_increases(data))
+println(count_window_increases(data))
