@@ -25,3 +25,12 @@ stored in a dictionary. In part 1, this dictionary contains the array that
 should be multipled by the value 'X' to get the new [pos, depth]. In part 2,
 the dictionary contains the 'forward', 'down', 'up' functions to directly
 update the coordinates.
+
+One way I could clean it up (but I won't since I want the solutions to be as-
+attempted) is to package the loop over the 'input' into a function that updates
+the coordinates at each step. Essentially, create an update function (rules)
+for each part (Dict of functions) and then pass this Dict of instructions in as
+well. The function should just return the final coords!
+
+Update: I went ahead and did it in the 'learn' directory, which I'll use to
+write improvements to the challenges!

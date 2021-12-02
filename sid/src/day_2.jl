@@ -1,7 +1,7 @@
 # https://adventofcode.com/2021/day/2
 using AdventOfCode
 
-input = readlines("data/day_2.txt")
+input = readlines("data/day_2_test.txt")
 
 function part_1(input)
   # Given set of instructions, find final depth and horizontal direction
