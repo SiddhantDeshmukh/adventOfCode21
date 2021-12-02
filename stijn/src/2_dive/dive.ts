@@ -11,13 +11,17 @@ export const divePartOne = (course: Course): number => {
 
   course.forEach((submarineCommand) => {
     const instruction = submarineCommand.match(/^(down|up|forward)/)?.[0];
-    let distance = 0;
+    const distance = parseInt(submarineCommand.match(/([0-9])*$/)?.[0], 10);
 
-    try {
-      distance = parseInt(submarineCommand.match(/([0-9])*$/)?.[0] || "0", 10);
-    } catch (e) {
+    if (typeof instruction === "undefined") {
       throw new Error(
-        `Invalid course ${submarineCommand}. Unable to parse ${distance} as number. ${e}`
+        `Invalid course "${submarineCommand}". Unable to parse the instruction.`
+      );
+    }
+
+    if (isNaN(distance)) {
+      throw new Error(
+        `Invalid course "${submarineCommand}". Unable to parse the distance.`
       );
     }
 
@@ -34,9 +38,6 @@ export const divePartOne = (course: Course): number => {
         position.horizontal += distance;
         break;
       }
-      default: {
-        console.warn(`Ignoring invalid instruction ${instruction}.`);
-      }
     }
   });
 
@@ -48,13 +49,17 @@ export const divePartTwo = (course: Course): number => {
 
   course.forEach((submarineCommand) => {
     const instruction = submarineCommand.match(/^(down|up|forward)/)?.[0];
-    let amount = 0;
+    const amount = parseInt(submarineCommand.match(/([0-9])*$/)?.[0], 10);
 
-    try {
-      amount = parseInt(submarineCommand.match(/([0-9])*$/)?.[0] || "0", 10);
-    } catch (e) {
+    if (typeof instruction === "undefined") {
       throw new Error(
-        `Invalid course ${submarineCommand}. Unable to parse ${amount} as number. ${e}`
+        `Invalid course "${submarineCommand}". Unable to parse the instruction.`
+      );
+    }
+
+    if (isNaN(amount)) {
+      throw new Error(
+        `Invalid course "${submarineCommand}". Unable to parse the amount.`
       );
     }
 
@@ -71,9 +76,6 @@ export const divePartTwo = (course: Course): number => {
         position.horizontal += amount;
         position.depth += position.aim * amount;
         break;
-      }
-      default: {
-        console.warn(`Ignoring invalid instruction ${instruction}.`);
       }
     }
   });

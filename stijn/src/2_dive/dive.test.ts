@@ -14,6 +14,15 @@ describe("Day 2: Dive", () => {
 
       expect(divePartOne(course)).toEqual(150);
     });
+
+    it("throws an error when it receives an invalid course", () => {
+      // @ts-ignore We're simulating an invalid course which can for instance occur when parsing a json.
+      const course: Course = ["forward banana"];
+      expect(() => divePartOne(course)).toThrow();
+
+      // @ts-ignore We're simulating an invalid course which can for instance occur when parsing a json.
+      expect(() => divePartOne(["banana 3"])).toThrow();
+    });
   });
 
   describe("Part Two: what do you get if you multiply your final horizontal position by your final depth?", () => {
@@ -28,6 +37,14 @@ describe("Day 2: Dive", () => {
       ];
 
       expect(divePartTwo(course)).toEqual(900);
+    });
+
+    it("throws an error when it receives an invalid course", () => {
+      // @ts-ignore We're simulating an invalid course which can for instance occur when parsing a json.
+      expect(() => divePartTwo(["forward banana"])).toThrow();
+
+      // @ts-ignore We're simulating an invalid course which can for instance occur when parsing a json.
+      expect(() => divePartTwo(["banana 3"])).toThrow();
     });
   });
 });
