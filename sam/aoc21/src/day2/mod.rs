@@ -1,6 +1,6 @@
-use std::ops::{Add};
 use std::fs::File;
 use std::io::{self, BufRead, Error};
+use std::ops::Add;
 
 const INPUT_FILE: &str = "./src/day2/input.txt";
 
@@ -12,7 +12,7 @@ enum Command {
     Down(i32),
 }
 
-// I originally tried to used Serde, but it didn't work well, so I'm going for this instead. 
+// I originally tried to used Serde, but it didn't work well, so I'm going for this instead.
 impl Command {
     pub fn from_str(line: String) -> Command {
         let parts: Vec<&str> = line.split_ascii_whitespace().collect();
@@ -22,7 +22,7 @@ impl Command {
             "backward" => Self::Backward(val),
             "up" => Self::Up(val),
             "down" => Self::Down(val),
-            _ => panic!("Unexpected command")
+            _ => panic!("Unexpected command"),
         }
     }
 }
@@ -35,10 +35,12 @@ struct Position {
 
 impl Position {
     fn empty() -> Self {
-        Self {..Default::default()}
+        Self {
+            ..Default::default()
+        }
     }
-    
-    /// Multiplies the final position by the final depth. 
+
+    /// Multiplies the final position by the final depth.
     fn output(&self) -> i32 {
         self.position * self.depth
     }
@@ -55,7 +57,9 @@ impl Add<&Command> for Position {
             Command::Forward(val) => ret.position += val,
             Command::Backward(val) => ret.position -= val,
             Command::Up(val) => ret.depth -= val,
-            Command::Down(val) => { ret.depth += val; },
+            Command::Down(val) => {
+                ret.depth += val;
+            }
         }
         ret
     }
@@ -63,14 +67,16 @@ impl Add<&Command> for Position {
 
 #[test]
 fn day2_task1() -> Result<(), Error> {
-    let file = File::open(INPUT_FILE)?;    
-    let commands: Vec<Command> = io::BufReader::new(file).lines().map(|str| Command::from_str(str.unwrap()) ).collect();
+    let file = File::open(INPUT_FILE)?;
+    let commands: Vec<Command> = io::BufReader::new(file)
+        .lines()
+        .map(|str| Command::from_str(str.unwrap()))
+        .collect();
     let output: Position = commands.iter().fold(Position::empty(), |a, b| a + b);
     println!("Output for Task 1: {}", output.output());
-    
+
     Ok(())
 }
-
 
 #[derive(Default, Clone, Debug)]
 struct Position2 {
@@ -81,10 +87,12 @@ struct Position2 {
 
 impl Position2 {
     fn empty() -> Self {
-        Self {..Default::default()}
+        Self {
+            ..Default::default()
+        }
     }
-    
-    /// Multiplies the final position by the final depth. 
+
+    /// Multiplies the final position by the final depth.
     fn output(&self) -> i32 {
         self.position * self.depth
     }
@@ -96,8 +104,14 @@ impl Add<&Command> for Position2 {
     fn add(self, rhs: &Command) -> Self::Output {
         let mut ret = self.clone();
         match &rhs {
-            Command::Forward(val) => {ret.position += val; ret.depth += ret.aim * val},
-            Command::Backward(val) => {ret.position += val; ret.depth -= ret.aim * val},
+            Command::Forward(val) => {
+                ret.position += val;
+                ret.depth += ret.aim * val
+            }
+            Command::Backward(val) => {
+                ret.position += val;
+                ret.depth -= ret.aim * val
+            }
             Command::Up(val) => ret.aim -= val,
             Command::Down(val) => ret.aim += val,
         }
@@ -107,10 +121,13 @@ impl Add<&Command> for Position2 {
 
 #[test]
 fn day2_task2() -> Result<(), Error> {
-    let file = File::open(INPUT_FILE)?;    
-    let commands: Vec<Command> = io::BufReader::new(file).lines().map(|str| Command::from_str(str.unwrap()) ).collect();
+    let file = File::open(INPUT_FILE)?;
+    let commands: Vec<Command> = io::BufReader::new(file)
+        .lines()
+        .map(|str| Command::from_str(str.unwrap()))
+        .collect();
     let output: Position2 = commands.iter().fold(Position2::empty(), |a, b| a + b);
     println!("Output for Task 2: {}", output.output());
-    
+
     Ok(())
 }
