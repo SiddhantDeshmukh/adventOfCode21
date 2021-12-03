@@ -34,3 +34,10 @@ well. The function should just return the final coords!
 
 Update: I went ahead and did it in the 'learn' directory, which I'll use to
 write improvements to the challenges!
+
+## Day 3 - Binary Diagnostic
+
+Part 1 waws pretty straightforward but I struggled to finish part 2 in Julia.
+I spent a lot of time trying to come up with mathematical tricks to avoid
+looping, but in the end just bit the bullet and wrote out the loops. Oh
+well, would love to improve the code!
