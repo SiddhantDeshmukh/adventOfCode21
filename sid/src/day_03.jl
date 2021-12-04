@@ -52,7 +52,6 @@ function part_2(input)
     valid_co2s = []
     most = o2_counter(o2_matrix[:, curr_pos])
     least = co2_counter(co2_matrix[:, curr_pos])
-    # println(curr_pos, most, least)
     if !o2_done
       for entry in eachrow(o2_matrix)
         if entry[curr_pos] == most
@@ -61,8 +60,6 @@ function part_2(input)
       end
       o2_matrix = reduce(hcat, [[idx for idx in arr] for arr in valid_o2s])'
     end
-    # println(o2_done)
-    # println(co2_done)
     if !co2_done
       for entry in eachrow(co2_matrix)
         if entry[curr_pos] == least
@@ -71,16 +68,12 @@ function part_2(input)
       end
       co2_matrix = reduce(hcat, [[idx for idx in arr] for arr in valid_co2s])'
     end
-    # println(size(o2_matrix, 1))
-    # println(size(co2_matrix, 1))
     if size(o2_matrix, 1) == 1
       o2_done = true
     end
     if size(co2_matrix, 1) == 1
       co2_done = true
     end
-    # println(size(o2_matrix))
-    # println(size(co2_matrix))
     if o2_done && co2_done
       break
     end
