@@ -41,3 +41,20 @@ Part 1 waws pretty straightforward but I struggled to finish part 2 in Julia.
 I spent a lot of time trying to come up with mathematical tricks to avoid
 looping, but in the end just bit the bullet and wrote out the loops. Oh
 well, would love to improve the code!
+
+## Day 4 - Squid Bingo
+
+Difficulty is picking up! I spent a long time trying to figure out how to create
+a 3D array in Julia from the input provided, and eventually just resigned
+myself to looping. Really hope there's a nicer way to turn an array of 2D arrays
+into a 3D array (and higher order versions)! After figuring out the data, part 1
+was a little finnicky because there were lots of small things I had to check
+for. In the end, I added a 'scoreboard' for each bingo board that was
+initialised with zeroes. For every 'hit', the corresponding scoreboard value
+would become 1. This makes it easy to check for a bingo!
+
+I really think my code is too long, but I can't find a nicer way to do it; a
+quarter is just to load in the data! I suspect there is a much better way to
+do for loops akin to 'itertools.product' (or at least to go over every index).
+Part 2 wasn't much harder because of the way I'd written the code, I just had
+to change the rules for the 'win' condition. Onto the next one!

@@ -2,7 +2,7 @@
 using AdventOfCode
 using InvertedIndices
 
-input = readlines("./data/day_04_test.txt")
+input = readlines("./data/day_04.txt")
 # First line is drawn numbers, each board is separated by ""
 
 function load_boards(input)
@@ -48,18 +48,23 @@ function sum_unmarked(scoreboard, board)
   return reduce(+, board[unmarked_idxs])
 end
 
-function check_bingo(scoreboards, boards)
+function check_bingo(scoreboards, boards; return_sum = true, ignore_boards=[])
   # Check if row/col sums to 5
-  # If 'bingo', return sum of unmarked numbers on winning board
+  # If 'bingo', return sum of unmarked numbers on winning board OR board index
   for k in 1:size(scoreboards)[3]
-    for (i, row) in enumerate(eachrow(scoreboards[:, :, k]))
+    if k in ignore_boards
+      continue
+    end
+    scoreboard = scoreboards[:, :, k]
+    board = boards[:, :, k]
+    for row in eachrow(scoreboard)
       if reduce(+, row) == 5
-        return sum_unmarked(scoreboards[:, :, k], boards[:, :, k])
+        return return_sum ? sum_unmarked(scoreboard, board) : k
       end
     end
-    for (j, col) in enumerate(eachcol(scoreboards[:, :, k]))
+    for col in eachcol(scoreboard)
       if reduce(+, col) == 5
-        return sum_unmarked(scoreboards[:, :, k], boards[:, :, k])
+        return return_sum ? sum_unmarked(scoreboard, board) : k
       end
     end
   end
@@ -77,7 +82,7 @@ function part_1(input)
           if boards[i, j, k] == draw
             scoreboards[i, j, k] = 1
             # Check for bingo
-            bingo = check_bingo(scoreboards, boards)
+            bingo = check_bingo(scoreboards, boards; return_sum = true)
             if bingo !== nothing
               return bingo * draw
             end
@@ -91,5 +96,28 @@ end
 
 function part_2(input)
   # Now we find which board wins last
+  draws, boards, scoreboards = load_boards(input)
+  max_wins = size(boards)[3]
+  bingo_counter = fill(0, max_wins)
+  # Draw number sequentially and mark off on "scoreboards"
+  for draw in draws
+    for i in 1:size(boards)[1]
+      for j in 1:size(boards)[2]
+        for k in 1:size(boards)[3]
+          if boards[i, j, k] == draw
+            scoreboards[i, j, k] = 1
+            # Check for bingo
+            index = check_bingo(scoreboards, boards; return_sum = false, ignore_boards = findall(x->x==1, bingo_counter))
+            if index !== nothing
+              bingo_counter[index] = 1
+              if reduce(+, bingo_counter) == max_wins
+                return sum_unmarked(scoreboards[:, :, index], boards[:, :, index]) * draw
+              end
+            end
+          end
+        end
+      end
+    end
+  end
 end
 @info part_2(input)
