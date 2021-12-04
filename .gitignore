@@ -14,4 +14,4 @@ Cargo.lock
 *.pdb
 
 # Ignore my rsc folder with problem data 
-james/rsc
+# james/rsc
