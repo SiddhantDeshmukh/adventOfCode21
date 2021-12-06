@@ -36,7 +36,6 @@ fn part_one(boards: &mut Vec<Board>, rolls: &Vec<usize>){
         }
             
     }
-
 }
 
 fn part_two(boards: &mut Vec<Board>, rolls: &Vec<usize>){
@@ -70,12 +69,8 @@ fn part_two(boards: &mut Vec<Board>, rolls: &Vec<usize>){
             break;
         }else{
             indices = temp_indices;
-        }
-        
-            
+        }   
     }
-
-
 }
 
 
@@ -108,7 +103,7 @@ impl Board{
             }
         }
         
-        for i in (0..5){
+        for i in 0..5{
             let mut okay:bool = true; 
             for j in (i..25).step_by(5)   {
                 okay = okay && *self.values.get(&self.locations[j]).unwrap();
