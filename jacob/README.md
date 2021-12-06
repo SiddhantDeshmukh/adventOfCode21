@@ -22,3 +22,6 @@ Bingo! How hard could it be... I stored each "board" as a hashmap (like python d
 
 ## Day 5
 Given line start/end coordinates, find where they cross. I made Line and Map structs to hold the data, and saved the coordinates along each line. I found out that you can't make an array [usize;1000000] but you can make a vector equally long, due to stack overflow. Part 1 was just horiz/vert lines, and part 2 added diagonal. All the magic happens in the file processing function which formats the lines nicely.
+
+## Day 6
+Exponential fish spawning! In part 1 I simply made a Fish struct and iterated overall fish on a given day, making more fish when timers ran out. This of course becomes crazy for a large number of days, and part 2 punished me for taking the easy way out. In part 2 I have an array with N_fish on each day, and then I spawn fish in batches and "school" the fish at the end of a cycle to account for new spawns. Should scale linearly with N_days. 
