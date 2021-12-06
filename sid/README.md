@@ -58,3 +58,12 @@ quarter is just to load in the data! I suspect there is a much better way to
 do for loops akin to 'itertools.product' (or at least to go over every index).
 Part 2 wasn't much harder because of the way I'd written the code, I just had
 to change the rules for the 'win' condition. Onto the next one!
+
+## Day 5 - Hydrothermal Ventures
+
+Still struggling with arrays! I'm getting a little better at constructing
+multidimensional ones and just discovered the 'cat' with 'dims' function
+so that's nice. I spent a lot of time trying to abstract the code which is
+why part 2 took a while today, but in the end I had to live with my split
+conditional that filtered the order of indices depending on if we were
+dealing with a diagonal line or not.
