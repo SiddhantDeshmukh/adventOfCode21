@@ -17,7 +17,7 @@ an array. At the end, I applied the same finite difference
 positive-counting method on this new array whose elements were the window
 sums. All in all, a good start!
 
-## Day 2 - Dive!
+## Day 2 - Dive
 
 I solved this using vectors, assigning coordinates [pos, depth] for part 1
 and [pos, depth, aim] for part 2. The instructions for the submarine are
@@ -67,3 +67,14 @@ so that's nice. I spent a lot of time trying to abstract the code which is
 why part 2 took a while today, but in the end I had to live with my split
 conditional that filtered the order of indices depending on if we were
 dealing with a diagonal line or not.
+
+## Day 6 - Lanternfish
+
+Was fun! Thanks to a hint I managed to avoid creating a large list (I was
+shying away from it anyways) and instead made a 'growth_rate + 2' size
+array that kept track of how many lanternfish were in each stage. The
+update rule is just a scalar value 'num_6_increase' in the current
+implementation, but it would be more interesting to make it a vector of
+the same length as the fish counts so one could define arbitrary update
+rules for the fish. Part 1 and part 2 were the same because of the method
+I chose, which was a nice surprise.
