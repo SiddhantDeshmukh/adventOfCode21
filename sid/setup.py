@@ -1,6 +1,7 @@
 # Generates boilerplate for given day
 import sys
 import pathlib
+import os
 
 day = sys.argv[1]
 ROOT = pathlib.Path(__file__).parent.absolute()
@@ -26,10 +27,13 @@ end
 
 """
 
-out_path = f'{src}/day_{day.zfill(2)}.jl'
+day = day.zfill(2)
+out_path = f'{src}/day_{day}.jl'
 
-if pathlib.Path.is_file(out_path):
+if os.path.exists(out_path):
   print("Error: File exists!")
 else:
   with open(out_path, 'w', encoding='utf-8') as outfile:
     outfile.write(boilerplate)
+  os.system(f"touch {data}/day_{day}.txt")
+  os.system(f"touch {data}/day_{day}_test.txt")
