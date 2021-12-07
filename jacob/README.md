@@ -25,3 +25,6 @@ Given line start/end coordinates, find where they cross. I made Line and Map str
 
 ## Day 6
 Exponential fish spawning! In part 1 I simply made a Fish struct and iterated overall fish on a given day, making more fish when timers ran out. This of course becomes crazy for a large number of days, and part 2 punished me for taking the easy way out. In part 2 I have an array with N_fish on each day, and then I spawn fish in batches and "school" the fish at the end of a cycle to account for new spawns. Should scale linearly with N_days. 
+
+## Day 7
+A minimization problem. I thought I could use the median of the array (which worked for test data), and this works for part 1. For part two I used the mean because now outliers were more heavily weighted. 

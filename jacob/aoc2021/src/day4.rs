@@ -60,12 +60,12 @@ fn part_two(boards: &mut Vec<Board>, rolls: &Vec<usize>){
             }      
         }
 
-        //println!("{:?}",boards[37].values );
-        //println!("{:?}",indices);
-
         if temp_indices.len() < 1{
             //no more boards, so we've reached the last one
-            println!("Part two answer is {}x{}={}", boards[indices[0]].score,r,boards[indices[0]].score*r );
+            println!("{:?}",temp_indices);
+            println!("{:?}",r);
+
+            println!("Part two answer is {}x{}={}", boards[indices[0]].score,r,(boards[indices[0]].score)*r );
             break;
         }else{
             indices = temp_indices;
