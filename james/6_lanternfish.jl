@@ -34,4 +34,4 @@ end
 
 lanternfish_ages = parse_lanternfish("james/rsc/6_lanternfish_ages.txt")
 println("Part 1: $(evolve_population(lanternfish_ages, 80))")
-println("Part 1: $(evolve_population(lanternfish_ages, 256))")
+println("Part 2: $(evolve_population(lanternfish_ages, 256))")
