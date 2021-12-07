@@ -61,3 +61,25 @@ so maybe my code needs refined"""
 """Going through my elements, I realized that the
 sorted function isn't working on my crab_list. That's my issue"""
 """Attempt 3 success! 347449 was my answer. My list was reading as strings rather than integers, causing the issue."""
+
+
+def change_in_x_p2(crabs):
+    desired_x_pos = (average_x(crabs))
+    fuel_use = 0
+    for i in crabs:
+        if int(i) < desired_x_pos:
+            j = int(desired_x_pos) - int(i)
+            fuel_use += int((j*(j+1))/2)
+        elif int(i) > desired_x_pos:
+            j = int(i) - int(desired_x_pos)
+            fuel_use += int((j*(j+1))/2)
+        else:
+            fuel_use += 0
+    print("Total fuel use: ", fuel_use)
+    return fuel_use
+
+change_in_x_p2(int_crab_pos)
+
+"""Attempt 1 returned 97678470 which was too low.
+Time to fix my formula?"""
+"""Attempt 2 worked for the example. 98039615 was too high though, so failed"""
