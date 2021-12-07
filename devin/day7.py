@@ -64,7 +64,7 @@ sorted function isn't working on my crab_list. That's my issue"""
 
 
 def change_in_x_p2(crabs):
-    desired_x_pos = (average_x(crabs))
+    desired_x_pos = (average_x(crabs)-1)
     fuel_use = 0
     for i in crabs:
         if int(i) < desired_x_pos:
@@ -83,3 +83,5 @@ change_in_x_p2(int_crab_pos)
 """Attempt 1 returned 97678470 which was too low.
 Time to fix my formula?"""
 """Attempt 2 worked for the example. 98039615 was too high though, so failed"""
+"""Attempt 3, instead of rounding average up,
+I rounded down and got the right answer: 98039527"""
