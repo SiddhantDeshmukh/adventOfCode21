@@ -28,3 +28,6 @@ Exponential fish spawning! In part 1 I simply made a Fish struct and iterated ov
 
 ## Day 7
 A minimization problem. I thought I could use the median of the array (which worked for test data), and this works for part 1. For part two I used the mean because now outliers were more heavily weighted. 
+
+## Day 8
+Seven Segment Search -- needed to parse strings like 'gedfc' to figure out which digit is being displayed. The trick is that we don't know what char corresponds to which display element! Part one was straightforward, count all strings of len 2,3,4,7 because they are unique. The strings with len 5 and 6 can represent 3 numbers each. Part 2 requires some logical deduction. I used hashmaps to store the code, number pairs and went to town. Needed to sort the input strings because the input strings were given with different character ordering that the output strings for each number to decrypt. I'm sure there's some better heuristics than what I used.

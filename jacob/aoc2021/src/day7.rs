@@ -12,7 +12,7 @@ pub fn main(){
 fn part_one(v: &Vec<usize>){
     //use the median position
     println!("Part one cost {} at location {}",
-        fuel_sum(v, median(v) ,median(v)  ));
+        fuel_sum(v, median(v)) ,median(v)  );
 }
 
 fn part_two(v: &Vec<usize>){
