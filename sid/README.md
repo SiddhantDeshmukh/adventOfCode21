@@ -78,3 +78,11 @@ implementation, but it would be more interesting to make it a vector of
 the same length as the fish counts so one could define arbitrary update
 rules for the fish. Part 1 and part 2 were the same because of the method
 I chose, which was a nice surprise.
+
+## Day 7 - The Treachery of Whales
+
+Nice simple one today! Part 1 was simply the median, part 2 involved a
+minimisation on a custom loss. There's probably a statistics analogue to this
+as well but I just brute-forced it by iterating through the array since it was
+only 1000 elements or so. Wrote a nice function that takes in the loss function
+as an argument to easily calculate these and learnt about types!
