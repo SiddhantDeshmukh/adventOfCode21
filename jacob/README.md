@@ -31,3 +31,6 @@ A minimization problem. I thought I could use the median of the array (which wor
 
 ## Day 8
 Seven Segment Search -- needed to parse strings like 'gedfc' to figure out which digit is being displayed. The trick is that we don't know what char corresponds to which display element! Part one was straightforward, count all strings of len 2,3,4,7 because they are unique. The strings with len 5 and 6 can represent 3 numbers each. Part 2 requires some logical deduction. I used hashmaps to store the code, number pairs and went to town. Needed to sort the input strings because the input strings were given with different character ordering that the output strings for each number to decrypt. I'm sure there's some better heuristics than what I used.
+
+## Day 9
+Smoky Snorkeling -- finding relative minima. Part 1 was straightforward because it didn't count diagonals. Part 2 involved finding "basins" which were clusters of points around the minima which have values < 9. I did this iteratively, adding unique points to a hashmap and then looking at their adjacent values.
