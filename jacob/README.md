@@ -34,3 +34,6 @@ Seven Segment Search -- needed to parse strings like 'gedfc' to figure out which
 
 ## Day 9
 Smoky Snorkeling -- finding relative minima. Part 1 was straightforward because it didn't count diagonals. Part 2 involved finding "basins" which were clusters of points around the minima which have values < 9. I did this iteratively, adding unique points to a hashmap and then looking at their adjacent values.
+
+## Day 10
+Fun with stacks -- keeping track of opening and closing brackets. I tried to do it with keeping running total for each char (e.g., '['=1 and ']'=-1 ) but this was order agnostic and wasn't suited for either part. In the end I used stacks to track the ordering and pop or push as necessary at each character. Part 2 is then trivial as you then just keep popping and inverting the characters to get the "autocomplete". Reused the sorted insert function from previous days.

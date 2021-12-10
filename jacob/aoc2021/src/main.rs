@@ -11,6 +11,7 @@ mod day6;
 mod day7;
 mod day8;
 mod day9;
+mod day10;
 
 fn main(){
     //This function simply calls the Function of the Day
@@ -66,6 +67,9 @@ fn main(){
                     break;},
             9 => {  println!("Executing day {}",day);
                     day9::main(); 
+                    break;},
+            10 => {  println!("Executing day {}",day);
+                    day10::main(); 
                     break;},
             _=> println!("Please enter a valid day to run (0-24): "),//edge case, keep looping
         }
