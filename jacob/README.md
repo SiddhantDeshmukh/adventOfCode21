@@ -37,3 +37,6 @@ Smoky Snorkeling -- finding relative minima. Part 1 was straightforward because 
 
 ## Day 10
 Fun with stacks -- keeping track of opening and closing brackets. I tried to do it with keeping running total for each char (e.g., '['=1 and ']'=-1 ) but this was order agnostic and wasn't suited for either part. In the end I used stacks to track the ordering and pop or push as necessary at each character. Part 2 is then trivial as you then just keep popping and inverting the characters to get the "autocomplete". Reused the sorted insert function from previous days.
+
+## Day 11
+Recursion! -- when a squid flashes, recursively change adj squids' energy levels. Trick was to use hashmap so each  was only visited once.
