@@ -1,7 +1,3 @@
-function countmatch(substr, str)
-    return length(collect(eachmatch(Regex(string(substr)), str)))
-end
-
 function read_polymer_data(data_file)
     lines = readlines(data_file)
     return (lines[1], Dict(split.(lines[3:102], " -> ")))
