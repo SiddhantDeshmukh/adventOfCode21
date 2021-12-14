@@ -1,5 +1,5 @@
+#![allow(dead_code)]
 use std::io;
-
 //my modules
 mod day0;
 mod day1;
@@ -13,6 +13,10 @@ mod day8;
 mod day9;
 mod day10;
 mod day11;
+mod day12;
+mod day13;
+mod day14;
+
 
 fn main(){
     //This function simply calls the Function of the Day
@@ -74,6 +78,15 @@ fn main(){
                     break;},
             11 => {  println!("Executing day {}",day);
                     day11::main(); 
+                    break;},
+            12 => {  println!("Executing day {}",day);
+                    day12::main(); 
+                    break;},
+            13 => {  println!("Executing day {}",day);
+                    day13::main(); 
+                    break;},
+            14 => {  println!("Executing day {}",day);
+                    day14::main(); 
                     break;},
             _=> println!("Please enter a valid day to run (0-24): "),//edge case, keep looping
         }

@@ -15,7 +15,7 @@ fn part_onetwo(v: &Vec<String>){
     let mut scores_two:Vec<usize> = Vec::new();
     for line in v{
         let mut char_counter: [isize; 4] = [0;4]; //corresponding to (, [, {, < -- unused in the end
-        let mut chars: Vec<char> = line.chars().collect();
+        let chars: Vec<char> = line.chars().collect();
         let mut wrong_char = ' '; 
         let mut char_stack: Vec<char> = Vec::new(); // stack to keep track of order of pairs
         //add each opening bracket to stack, when meeting closing bracket, see if it matches the most recent opening

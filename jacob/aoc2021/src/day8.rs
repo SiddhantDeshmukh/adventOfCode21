@@ -220,7 +220,7 @@ fn process_file(filename: &str) -> Vec<Display>{
     //should have one line per display
     for l in lines{
         let temp:Vec<&str> = l.split("|").collect();
-        let mut d = Display{
+        let d = Display{
             inputs:  temp[0].trim().split_whitespace().into_iter().map(|s| sort_str(s)).collect(),
             outputs: temp[1].trim().split_whitespace().into_iter().map(|s| sort_str(s)).collect(),
             codes: vec![String::from("");10],

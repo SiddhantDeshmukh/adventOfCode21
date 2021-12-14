@@ -40,3 +40,12 @@ Fun with stacks -- keeping track of opening and closing brackets. I tried to do 
 
 ## Day 11
 Recursion! -- when a squid flashes, recursively change adj squids' energy levels. Trick was to use hashmap so each  was only visited once.
+
+## Day 12
+Using depth-first search find paths through caves with only visiting small caves once. In part 2 you can visit up to one small cave 2x (this was implemented with a hashmap and simple iteration overall nodes -- probably a bit slow.). Part 1 is fast, but the iterations in part 2 are inefficient in my implementation.
+
+## Day 13
+Lots of x,y coordinate transforms to get to the final answer. Used Structs and hashmaps to only keep unique "dots"
+
+## Day 14
+I started the completely wrong way. I wasted a lot of time thinking I could do regex replacement (in the regex crate there is no way to do overlapping replacements that I could find), so then I started modifying the string directly. This worked for part one but part two took forever to complete. Completely rewrote using simple counting of pair and character occurances, and adding or subtracting the number of times they appear (based on James' soln in Julia).
