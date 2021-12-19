@@ -49,3 +49,5 @@ Lots of x,y coordinate transforms to get to the final answer. Used Structs and h
 
 ## Day 14
 I started the completely wrong way. I wasted a lot of time thinking I could do regex replacement (in the regex crate there is no way to do overlapping replacements that I could find), so then I started modifying the string directly. This worked for part one but part two took forever to complete. Completely rewrote using simple counting of pair and character occurances, and adding or subtracting the number of times they appear (based on James' soln in Julia).
+
+## Day 15
