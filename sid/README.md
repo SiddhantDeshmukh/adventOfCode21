@@ -86,3 +86,14 @@ minimisation on a custom loss. There's probably a statistics analogue to this
 as well but I just brute-forced it by iterating through the array since it was
 only 1000 elements or so. Wrote a nice function that takes in the loss function
 as an argument to easily calculate these and learnt about types!
+
+## Day 8 - Seven Segment Search
+
+I've come back on the 20th to binge the puzzles and this one took a few hours
+to get right! I settled on identifying digits uniquely by comparing them to
+digits I had already identified (a sort of boolean mask) and 'subtracting' their
+segments from one another (custom loss metric). There are a few things that
+could be cleaned up, namely figuring out how to zip my (signals, values), a
+cleaner way to filter and delete segment lists, and better multiple dispatch
+support. I wrote a lot of one-liners for this one since I used a lot of
+comprehensions (which naturally fit quite nicely into a one-liner).
