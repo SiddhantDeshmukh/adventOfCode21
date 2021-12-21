@@ -97,3 +97,14 @@ could be cleaned up, namely figuring out how to zip my (signals, values), a
 cleaner way to filter and delete segment lists, and better multiple dispatch
 support. I wrote a lot of one-liners for this one since I used a lot of
 comprehensions (which naturally fit quite nicely into a one-liner).
+
+## Day 9 - Smoke Basin
+
+I feel like there was a better way to solve part 1 using a kernel to slide
+across the input and select the allowed neighbours. I just did it the brute
+force way, though. And in part 2, I cheated by using the Images library to find
+and label components, then a nice snippet from SO that gave me the elements
+(but that part is simple, since the components are already labelled). Another
+idea that might be useful in the future is to build up a graph, then do the DFS
+to identify connected components. For a grid, the graph would be pretty big but
+I wonder if it's tractable.
