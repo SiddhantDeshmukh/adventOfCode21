@@ -108,3 +108,17 @@ and label components, then a nice snippet from SO that gave me the elements
 idea that might be useful in the future is to build up a graph, then do the DFS
 to identify connected components. For a grid, the graph would be pretty big but
 I wonder if it's tractable.
+
+## Day 10 - Syntax Scoring
+
+Took me a while to get going, but the way I solved part 1 automatically solved
+part 2 since I was keeping track of which closing brackets were necessary.
+
+## Day 11 - Dumbo Octopus
+
+Just like 10, took me a bit to get going (I'm still bad at recursion), but I
+managed to do it all without needing to look much up! Struck me as quite similar
+to a Game of Life, and even though I haven't written many, I was able to piece
+together the essentials to get this to work. Again, part 2 is free after part 1.
+
+## Day 12 - Passage Pathing
