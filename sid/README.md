@@ -122,3 +122,19 @@ to a Game of Life, and even though I haven't written many, I was able to piece
 together the essentials to get this to work. Again, part 2 is free after part 1.
 
 ## Day 12 - Passage Pathing
+
+First time I've had to write a pathfinding algorithm with rules, I think! It was
+quite fun, but took me a really long time to do properly. I kept getting stuck
+in infinite loops because I popped the visited nodes too soon or messed up a
+rule. It also took me a good hour to get to grips with Julia OOP -> and I have
+to say the way I did it makes it really convoluted for part 2. Instead, I should
+have created external functions that operated on the struct. Turns out my part 2
+logic was almost correct for a while, but I had '<=2' instead of '<2'...
+
+## Day 13 - Transparent Origami
+
+## Day 14 - Extended Polymerization
+
+I had to rewrite all of part 1 because I fell into the classic trap of actually
+making the polymer. I didn't realise until a while later that only the numbers
+of pairs matter, not their order.

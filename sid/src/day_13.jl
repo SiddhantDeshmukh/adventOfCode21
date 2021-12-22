@@ -1,7 +1,7 @@
 # https://adventofcode.com/2021/day/13
 using AdventOfCode
 
-input = readlines("./data/day_13.txt")
+input = readlines("./data/day_13_test.txt")
 
 function part_1(input)
   nothing
